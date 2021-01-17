@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ввод данных</title>
+    </head>
+    <body>
+
+        <h2>Get tokens</h2>
+        <form method="POST" action="http://localhost:8181/api/get">
+            <label>Enter GUID:</label><br>
+            <input type="text" name="guid" size="32"/><br><br>
+            <input type="submit" value="Отправить" />
+            <br><br><br><br>
+        </form>
+
+        <h2>Refresh tokens</h2>
+        <form method="POST" action="http://localhost:8181/api/ref">
+            <label>Enter access-token</label><br>
+            <input type="text" name="at" size="192"/><br><br>
+            <label>Enter refresh-token</label><br>
+            <input type="text" name="rt" size="192"/><br><br>
+            <input type="submit" value="Отправить" />
+        </form>
+
+    </body>
+</html>
