@@ -20,7 +20,7 @@ type post struct{
 }
 var (
 	client,_ = mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://localhost:27017"))
-    // DB = collection
+// DB = collection
 	DB = client.Database("medods").Collection("users")
 )
 

@@ -8,8 +8,11 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-// data type
-type data struct {Data string; Exp int}
+// data
+type data struct {
+	Data string
+	Exp int
+}
 var secretATkey, secretRTkey string = "secretATkey", "secretRTkey"
 
 // createAT
@@ -26,8 +29,8 @@ func createRT(AT string) string{
 }
 // calcJWT
 func calcJWT(headAndPayload *jwt.Token, key string) string{
-	AT, _ := headAndPayload.SignedString([]byte(key))
-	return AT
+	JWT,_ := headAndPayload.SignedString([]byte(key))
+	return JWT
 }
 // getATguid
 func getATguid(AT string) string{
@@ -57,7 +60,7 @@ func isRTvalid(AT, RT string) bool{
 }
 // isJWT
 func isJWT(jwt string) bool{
-	if len(strings.Split(jwt, ".")) == 3 {return true}
+	if len(strings.Split(jwt,".")) == 3 {return true}
 	return false
 }
 // getJWTpayload
